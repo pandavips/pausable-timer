@@ -2,7 +2,7 @@ interface IOptions {
   timer: number;
   mode: "loop" | "once";
   callback: () => any;
-  debug: boolean;
+  debug?: boolean;
 }
 
 type modeType = "loop" | "once";
@@ -22,10 +22,8 @@ class PausableTimer {
   private callback = () => {};
   private mode: modeType;
 
-  private opentionMeat: IOptions;
   constructor(option: IOptions) {
     console.log(globalThis.window ? "运行在浏览器" : "运行在其它运行时");
-    this.opentionMeat = option;
 
     this.isDubgger = option.debug;
     // 在ts以外的环境判断下

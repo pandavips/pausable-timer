@@ -1,6 +1,6 @@
 {
   "name": "pausable-timer",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "一个可随时暂停以及恢复的定时器",
   "keywords": [
     "setInterval",
@@ -31,11 +31,10 @@
     "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.0",
-    "typescript": "^4.8.2"
-  },
-  "dependencies": {
+    "typescript": "^4.8.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "rollup": "^2.78.1",
     "rollup-plugin-babel": "^4.4.0"
-  }
+  },
+  "dependencies": {}
 }
