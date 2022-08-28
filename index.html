@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>123123</div>
+    <button id="p">暂停</button>
+    <button id="r">恢复</button>
+    <button id="cl">更改为周期执行</button>
+    <button id="co">更改为一次性执行</button>
+    <script type="module">
+      import PausableTimer from "./dist/main.esm.js";
+      const pt = new PausableTimer({
+        mode: "loop",
+        timer: 2000,
+        callback: () => {
+          console.log("panda");
+        },
+        debug: true,
+      });
+      document.getElementById("p").addEventListener("click", pt.pause);
+      document.getElementById("r").addEventListener("click", pt.resume);
+      document.getElementById("cl").addEventListener("click", () => {
+        pt.setMode("loop");
+      });
+      document.getElementById("co").addEventListener("click", () => {
+        pt.setMode("once");
+      });
+    </script>
+  </body>
+</html>
