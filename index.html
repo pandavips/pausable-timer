@@ -15,21 +15,39 @@
     <script type="module">
       import PausableTimer from "./dist/main.esm.js";
       const pt = new PausableTimer({
+        // 运行模式,只限于'loop','once'
         mode: "loop",
+        // 调用周期,毫秒
         timer: 2000,
+        // 回调
         callback: () => {
           console.log("panda");
         },
+        // 可选,是否开启调试,控制台会打印一些额外信息
         debug: true,
       });
-      document.getElementById("p").addEventListener("click", pt.pause);
-      document.getElementById("r").addEventListener("click", pt.resume);
-      document.getElementById("cl").addEventListener("click", () => {
-        pt.setMode("loop");
-      });
-      document.getElementById("co").addEventListener("click", () => {
-        pt.setMode("once");
-      });
+      // 暂停
+      pt.pause();
+      // 恢复
+      pt.resume();
+      // 改变运行模式,['loop'|'once'],第二个参数为可选,是否重新计时
+      pt.setMode("loop", true);
+      // 停止运行
+      pt.stop();
+
+      const mySetInterval = (callback, delay) => {
+        return new PausableTimer({
+          callback,
+          timer: delay,
+          mode: "loop",
+        });
+      };
+      mySetInterval(() => {
+        console.log("666");
+      }, 1000);
+      const myClearInterval = (t) => {
+        t.stop();
+      };
     </script>
   </body>
 </html>

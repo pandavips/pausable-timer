@@ -68,7 +68,6 @@ class PausableTimer {
     this.isDubgger && console.log("恢复", this.getState());
     this.start();
   };
-
   // 暂停
   pause = () => {
     if (this.diffTime) {
@@ -99,7 +98,6 @@ class PausableTimer {
   // 回到最初的美好
   reset = () => {
     this.diffTime = 0;
-    this.setMode(this.opentionMeat.mode);
     this.stop();
   };
   getState = () => {
