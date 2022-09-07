@@ -2,7 +2,7 @@ interface IOptions {
     timer: number;
     mode: "loop" | "once";
     callback: () => any;
-    debug: boolean;
+    debug?: boolean;
 }
 declare type modeType = "loop" | "once";
 declare class PausableTimer {
@@ -13,7 +13,6 @@ declare class PausableTimer {
     private isDubgger;
     private callback;
     private mode;
-    private opentionMeat;
     constructor(option: IOptions);
     start: () => void;
     resume: () => void;

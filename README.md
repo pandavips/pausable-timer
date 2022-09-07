@@ -6,6 +6,16 @@
 
 ## 简单使用
 
+安装
+
+```shell
+npm i pausable-timer
+# or
+yarn add pausable-timer
+# or
+pnpm i pausable-timer
+```
+
 ```JavaScript
   import PausableTimer from "pausable-timer";
   const pt = new PausableTimer({
