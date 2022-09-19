@@ -76,6 +76,10 @@ class PausableTimer {
     this.diffTime < 0 && this.callback();
     this.stop();
   };
+  after(delay: number) {
+    this.pause();
+    setTimeout(this.resume, delay);
+  }
   // 停止
   stop = () => {
     this.id && clearTimeout(this.id);

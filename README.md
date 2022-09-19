@@ -34,6 +34,8 @@ pnpm i pausable-timer
   pt.pause();
   // 恢复
   pt.resume();
+  // 暂停2秒之后恢复
+  pt.after(2000);
   // 改变运行模式,['loop'|'once'],第二个参数为可选,是否重新计时
   pt.setMode("loop", true);
   // 停止运行
