@@ -17,6 +17,7 @@ declare class PausableTimer {
     start: () => void;
     resume: () => void;
     pause: () => void;
+    after(delay: number): void;
     stop: () => void;
     getNowTime: () => number;
     setMode: (mode: modeType, isReset?: false) => void;
