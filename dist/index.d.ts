@@ -4,7 +4,7 @@ interface IOptions {
     callback: () => any;
     debug?: boolean;
 }
-declare type modeType = "loop" | "once";
+type ModeType = "loop" | "once";
 declare class PausableTimer {
     private id;
     private timer;
@@ -20,15 +20,15 @@ declare class PausableTimer {
     after(delay: number): void;
     stop: () => void;
     getNowTime: () => number;
-    setMode: (mode: modeType, isReset?: false) => void;
+    setMode: (mode: ModeType, isReset?: false) => void;
     reset: () => void;
     getState: () => {
         diffTime: number;
         startTime: number;
         timer: number;
-        mode: modeType;
+        mode: ModeType;
     };
-    checkMode: (mode: modeType) => void;
+    checkMode: (mode: ModeType) => void;
 }
 
 export { PausableTimer as default };

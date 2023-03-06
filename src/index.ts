@@ -5,7 +5,7 @@ interface IOptions {
   debug?: boolean;
 }
 
-type modeType = "loop" | "once";
+type ModeType = "loop" | "once";
 
 class PausableTimer {
   // timeID
@@ -20,7 +20,7 @@ class PausableTimer {
   private isDubgger!: boolean | undefined;
   // 回调函数
   private callback = () => {};
-  private mode: modeType;
+  private mode: ModeType;
 
   constructor(option: IOptions) {
     console.log(globalThis.window ? "运行在浏览器" : "运行在其它运行时");
@@ -90,7 +90,7 @@ class PausableTimer {
     return globalThis.window?.performance?.now() || Date.now();
   };
   // 改变模式
-  setMode = (mode: modeType, isReset?: false) => {
+  setMode = (mode: ModeType, isReset?: false) => {
     this.checkMode(mode);
     isReset && this.reset();
     this.mode = mode;
@@ -111,7 +111,7 @@ class PausableTimer {
       mode,
     };
   };
-  checkMode = (mode: modeType) => {
+  checkMode = (mode: ModeType) => {
     if (!["loop", "once"].includes(mode))
       throw new Error(`请指定正确的运行模式,"loop" | "once"`);
   };
